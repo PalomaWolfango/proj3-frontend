@@ -6,7 +6,7 @@ class ProjectList extends React.Component {
     render() {
         return(
             <div>
-                <h1 style={{color: 'grey', margin: '15px'}}>Projects List</h1>
+                <h1 style={{color: 'grey', margin: '15px', marginTop: '70px', textAlign: 'center'}}>Projects List</h1>
                 <Row xs={1} md={4} className="g-4" style={{margin: '5px'}}>
                 {Array.from({ length: 8 }).map((_, idx) => (
                     <Col>

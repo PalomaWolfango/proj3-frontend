@@ -8,7 +8,7 @@ function AppRoute() {
     return (
         < BrowserRouter >
             <Routes>
-                <Route exact path = '/' element = { <ProjectList/> } />
+                <Route exact path = '/projects' element = { <ProjectList/> } />
             </ Routes> 
         </ BrowserRouter>
     )
