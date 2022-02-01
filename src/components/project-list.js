@@ -1,12 +1,10 @@
 import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
-import MenuPrincipal from "./Menu/menu-principal";
 
 class ProjectList extends React.Component {
     render() {
         return(
             <div>
-                <MenuPrincipal/> 
                 <h1 style={{color: 'grey', margin: '15px', marginTop: '90px', marginBottom: '25px', textAlign: 'center'}}>Projects List</h1>
                 <Row xs={1} md={4} className="g-4" style={{margin: '5px'}}>
                 {Array.from({ length: 8 }).map((_, idx) => (

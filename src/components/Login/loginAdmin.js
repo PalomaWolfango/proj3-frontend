@@ -1,10 +1,9 @@
 import React from "react";
-import MenuLogin from "../Menu/menu-login";
 
 class LoginAdmin extends React.Component {
     render(){
         return(
-            <><div> <MenuLogin /> </div>
+            <>
             <div className="container" style={{ border: '3px solid #00867d', padding: '50px 35px', marginTop: '120px', maxWidth: '500px' }}>
                 <form>
                     <div class="mb-3">

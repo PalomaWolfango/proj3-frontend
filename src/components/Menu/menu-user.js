@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
-class MenuPrincipal extends React.Component {
+class MenuUser extends React.Component {
     render() {
         return(
             <div>
@@ -11,7 +11,7 @@ class MenuPrincipal extends React.Component {
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="m-auto">
                         <Nav.Link href="#home" style={{fontSize: '20px'}}>Home</Nav.Link>
-                        <Nav.Link href="/projects" style={{fontSize: '20px', marginLeft: '150px'}}>Projects</Nav.Link>
+                        <Nav.Link href="/projects" style={{fontSize: '20px', marginLeft: '150px'}}>Projects List</Nav.Link>
                         <Nav.Link href="/login" style={{fontSize: '20px', marginLeft: '150px'}}>Logout</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
@@ -22,4 +22,4 @@ class MenuPrincipal extends React.Component {
     }
 }
 
-export default MenuPrincipal;
+export default MenuUser;
