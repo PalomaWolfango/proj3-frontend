@@ -8,10 +8,10 @@ class HomePM extends React.Component {
         return(
             <><MenuPM />
             <div>
-            <div>
-                <img src={imagePM} alt="ImagePM" className="center" style={{marginTop:'180px'}}/>
-                <h2 className="header" style={{marginTop: '80px'}}>Welcome <b style={{color: '#4db6ac'}}>Mónica</b>!</h2>
-            </div>
+                <div>
+                    <img src={imagePM} alt="ImagePM" className="center" style={{marginTop:'180px'}}/>
+                    <h2 className="header" style={{marginTop: '80px'}}>Welcome <b style={{color: '#4db6ac'}}>Mónica</b>!</h2>
+                </div>
             </div>
             </>	
         )

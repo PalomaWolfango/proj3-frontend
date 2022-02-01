@@ -10,9 +10,9 @@ class MenuUser extends React.Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="m-auto">
-                        <Nav.Link href="#home" style={{fontSize: '20px'}}>Home</Nav.Link>
-                        <Nav.Link href="/projects" style={{fontSize: '20px', marginLeft: '150px'}}>Projects List</Nav.Link>
-                        <Nav.Link href="/login" style={{fontSize: '20px', marginLeft: '150px'}}>Logout</Nav.Link>
+                        <Nav.Link href="/home-user" style={{fontSize: '20px'}}>Home</Nav.Link>
+                        <Nav.Link href="/projects-list" style={{fontSize: '20px', marginLeft: '150px'}}>Projects List</Nav.Link>
+                        <Nav.Link href="/" style={{fontSize: '20px', marginLeft: '876px'}}>Logout</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>
