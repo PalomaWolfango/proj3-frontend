@@ -8,24 +8,46 @@ class CreateProject extends React.Component {
             <MenuAdmin />
             <h1 style={{color: 'grey', margin: '15px', marginTop: '100px', textAlign: 'center'}}>Create Project</h1>
             <div className="container" style={{ border: '3px solid #00867d', padding: '50px 35px', marginTop: '90px', maxWidth: '500px' }}>
-                {/* <form> */}
-                    {/* <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control"  placeholder="Project Name"/>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" />
+                        <input type="text" class="form-control" placeholder="Budget" />
                     </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <div style={{float: 'left', marginBottom: '20px'}} >
+                        <select name="project-type" id="projectType">
+                            <option value="tipo0">Project Type</option>
+                            <option value="tipo1">Tipo 1</option>
+                            <option value="tipo2">Tipo 2</option>
+                            <option value="tipo3">Tipo 3</option>
+                        </select>
                     </div>
-                    <div style={{textAlign: 'center', marginTop: '60px'}}>
-                    <button type="submit" class="btn btn-info" href="#" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 60px'}}>Submit</button>
-                    </div> */}
-                {/* </form> */}
+                    <div class="mb-3">
+                        <textarea type="text" class="form-control" placeholder="Project Decription" rows="5" />
+                    </div>
+                    <div style={{float: 'left'}} >
+                        <select name="team" id="team">
+                            <option value="team0">Team</option>
+                            <option value="team1">Team 1</option>
+                            <option value="team2">Team 2</option>
+                            <option value="team3">Team 3</option>
+                        </select>
+                    </div>
+
+                    <div style={{float: 'right'}} >
+                        <select name="project-manager" id="projectManager">
+                            <option value="pm0">Project Manager</option>
+                            <option value="pm1">Tipo 1</option>
+                            <option value="pm2">Tipo 2</option>
+                            <option value="pm3">Tipo 3</option>
+                        </select>
+                    </div>
+
+                    <div style={{textAlign: 'center', marginTop: '100px'}}>
+                    <button type="submit" class="btn btn-info" href="#" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 60px'}}>Create</button>
+                    </div>
+                </form> 
             </div></>
         )
     }

@@ -1,10 +1,14 @@
 import React from "react";
+import imageLogin from "../images/login.png";
 
 class LoginAdmin extends React.Component {
     render(){
         return(
             <>
-            <div className="container" style={{ border: '3px solid #00867d', padding: '50px 35px', marginTop: '120px', maxWidth: '500px' }}>
+            <div className="container" style={{ border: '3px solid #00867d', padding: '50px 35px', maxWidth: '500px', marginTop: '10%'}}>
+                <div>
+                    <img src={imageLogin} alt="ImageLogin" className="center" style={{marginBottom: '40px', width: '25%'}}/>
+                </div>
                 <form>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
