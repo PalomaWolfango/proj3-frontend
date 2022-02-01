@@ -15,8 +15,7 @@ class CreateProject extends React.Component {
                     <div class="mb-3">
                         <input type="text" class="form-control" placeholder="Budget" />
                     </div>
-                    <div>
-                        <div style={{float: 'left', marginBottom: '20px'}} >
+                    <div style={{float: 'left', marginBottom: '20px'}} >
                         <select name="project-type" id="projectType">
                             <option value="tipo0">Project Type</option>
                             <option value="tipo1">Tipo 1</option>
@@ -24,6 +23,18 @@ class CreateProject extends React.Component {
                             <option value="tipo3">Tipo 3</option>
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <textarea type="text" class="form-control" placeholder="Project Decription" rows="5" />
+                    </div>
+                    <div style={{float: 'left'}} >
+                        <select name="team" id="team">
+                            <option value="team0">Team</option>
+                            <option value="team1">Team 1</option>
+                            <option value="team2">Team 2</option>
+                            <option value="team3">Team 3</option>
+                        </select>
+                    </div>
+
                     <div style={{float: 'right'}} >
                         <select name="project-manager" id="projectManager">
                             <option value="pm0">Project Manager</option>
@@ -32,12 +43,8 @@ class CreateProject extends React.Component {
                             <option value="pm3">Tipo 3</option>
                         </select>
                     </div>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <textarea type="text" class="form-control" placeholder="Project Decription" rows="5" />
-                    </div>
-                    <div style={{textAlign: 'center', marginTop: '60px'}}>
+
+                    <div style={{textAlign: 'center', marginTop: '100px'}}>
                     <button type="submit" class="btn btn-info" href="#" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 60px'}}>Create</button>
                     </div>
                 </form> 
