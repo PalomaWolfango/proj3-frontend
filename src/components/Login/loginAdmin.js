@@ -1,5 +1,6 @@
 import React from "react";
 import imageLogin from "../images/login.png";
+import axios from "axios";
 
 class LoginAdmin extends React.Component {
     render(){
@@ -9,11 +10,11 @@ class LoginAdmin extends React.Component {
                 <div>
                     <img src={imageLogin} alt="ImageLogin" className="center" style={{marginBottom: '40px', width: '25%'}}/>
                 </div>
-                <form>
+                <form onSubmit={(e) => login(e)}>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        <label for="validationDefaultUsername" class="form-label">Username</label>
+                        <input type="username" class="form-control" id="validationDefaultUsername" aria-describedby="usernameHelp" />
+                        <div id="usernameHelp" class="form-text">We'll never share your username with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -26,12 +27,26 @@ class LoginAdmin extends React.Component {
                     <div style={{textAlign: 'center', marginTop: '60px'}}>
                     <button type="submit" class="btn btn-info" href="#" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 60px'}}>Submit</button>
                     </div>
-                    {/* monica */}
                 </form>
             </div></>
         )
     }
 } 
+
+function login (e) {
+    e.preventDefault();
+    let request =  {
+        username: document.getElementById('validationDefaultUsername').value,
+        password: document.getElementById('exampleInputPassword1').value   
+    }
+    axios.post('http://localhost:4000/api/users/login', request)
+    .then( resp => {
+        alert(resp.data.message);
+    })
+    .catch( err => {
+        console.log(err);
+    })
+}
 
 
 export default LoginAdmin;
