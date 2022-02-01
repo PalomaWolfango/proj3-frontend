@@ -8,24 +8,33 @@ class CreateUser extends React.Component {
             <MenuAdmin />
             <h1 style={{color: 'grey', margin: '15px', marginTop: '100px', textAlign: 'center'}}>Create User</h1>
             <div className="container" style={{ border: '3px solid #00867d', padding: '50px 35px', marginTop: '90px', maxWidth: '500px' }}>
-                {/* <form> */}
-                    {/* <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control"  placeholder="Name"/>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" />
+                        <input type="text" class="form-control" placeholder="Contact" />
                     </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Username" />
                     </div>
-                    <div style={{textAlign: 'center', marginTop: '60px'}}>
-                    <button type="submit" class="btn btn-info" href="#" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 60px'}}>Submit</button>
-                    </div> */}
-                {/* </form> */}
+                    <div class="mb-3">
+                        <input type="password" class="form-control" placeholder="Password" />
+                    </div>
+                    <div>
+                        <div style={{float: 'left', marginBottom: '20px'}} >
+                        <select name="user-type" id="userType">
+                            <option value="tipo0">User Type</option>
+                            <option value="Administrator">Administrator</option>
+                            <option value="User">User</option>
+                            <option value="Project Manager">Project Manager</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div style={{textAlign: 'center', marginTop: '120px'}}>
+                    <button type="submit" class="btn btn-info" href="#" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 60px'}}>Create</button>
+                    </div>
+                </form> 
             </div></>
         )
     }
