@@ -3,7 +3,9 @@ import imageLogin from "../images/login.png";
 import axios from "axios";
 
 class LoginAdmin extends React.Component {
+
     render(){
+
         return(
             <>
             <div className="container" style={{ border: '3px solid #00867d', padding: '50px 35px', maxWidth: '500px', marginTop: '10%'}}>
@@ -25,7 +27,7 @@ class LoginAdmin extends React.Component {
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div>
                     <div style={{textAlign: 'center', marginTop: '60px'}}>
-                    <button type="submit" class="btn btn-info" href="#" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 60px'}}>Submit</button>
+                    <button id="button-login" type="submit" class="btn btn-info" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 60px'}}>Submit</button>
                     </div>
                 </form>
             </div></>
@@ -41,12 +43,23 @@ function login (e) {
     }
     axios.post('http://localhost:4000/api/users/login', request)
     .then( resp => {
-        alert(resp.data.message);
+        if (resp.data.user === 'gestor') {
+            window.location = `/home-pm`;
+        } else {
+            if (resp.data.user === 'admin') {
+                window.location = `/home-admin`;
+            } else {
+                if (resp.data.user === 'user') {
+                    window.location = `/home-user`;
+                }
+            }
+        }
     })
     .catch( err => {
         console.log(err);
     })
 }
+
 
 
 export default LoginAdmin;
