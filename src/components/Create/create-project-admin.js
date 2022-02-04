@@ -1,7 +1,7 @@
 import React from "react";
 import MenuAdmin from "../Menu/menu-admin";
 
-class CreateProject extends React.Component {
+class CreateProjectAdmin extends React.Component {
     render(){
         return(
             <>
@@ -53,4 +53,4 @@ class CreateProject extends React.Component {
     }
 } 
 
-export default CreateProject;
+export default CreateProjectAdmin;

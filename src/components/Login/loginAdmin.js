@@ -27,7 +27,9 @@ class LoginAdmin extends React.Component {
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div>
                     <div style={{textAlign: 'center', marginTop: '60px'}}>
+                    
                     <button id="button-login" type="submit" class="btn btn-info" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 60px'}}>Submit</button>
+                    
                     </div>
                 </form>
             </div></>
@@ -43,20 +45,23 @@ function login (e) {
     }
     axios.post('http://localhost:4000/api/users/login', request)
     .then( resp => {
+        const userID = resp.data.id_user;
         if (resp.data.user === 'gestor') {
-            window.location = `/home-pm`;
+            window.location = `/home-pm/` + userID;
         } else {
             if (resp.data.user === 'admin') {
-                window.location = `/home-admin`;
+                window.location = `/home-admin/` + userID;
             } else {
                 if (resp.data.user === 'user') {
-                    window.location = `/home-user`;
+                    window.location = `/home-user/` + userID;
+                }else {
+                    alert(resp.data.message);
                 }
-            }
+            } 
         }
     })
     .catch( err => {
-        console.log(err);
+        /* alert("Wrong Credentials!"); */
     })
 }
 

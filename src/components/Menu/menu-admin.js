@@ -12,7 +12,7 @@ class MenuAdmin extends React.Component {
                     <Nav className="m-right">
                         <Nav.Link href="/home-admin" style={{fontSize: '20px', color: 'white'}}>Home</Nav.Link>
                         <Nav.Link href="/create-user" style={{fontSize: '20px', marginLeft: '150px', color: 'white'}}>Create User</Nav.Link>
-                        <Nav.Link href="/create-project" style={{fontSize: '20px', marginLeft: '150px', color: 'white'}}>Create Project</Nav.Link>
+                        <Nav.Link href="/create-project-admin" style={{fontSize: '20px', marginLeft: '150px', color: 'white'}}>Create Project</Nav.Link>
                         <Nav.Link href="/" style={{fontSize: '20px', marginLeft: '587px', color: 'white'}}>Logout</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>

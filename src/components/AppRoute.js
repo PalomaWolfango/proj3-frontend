@@ -7,8 +7,10 @@ import HomeAdmin from './Home/home-admin';
 import HomePM from './Home/home-pm';
 import HomeUser from './Home/home-user';
 import CreateUser from './Create/create-user';
-import CreateProject from './Create/create-project';
+import CreateProjectAdmin from './Create/create-project-admin';
 import ProjectDetails from './Projects/project-details';
+import CreateProjectPM from './Create/create-project-pm';
+
 
 function AppRoute() {
 
@@ -17,11 +19,12 @@ function AppRoute() {
             <Routes>
                 <Route exact path = '/projects-list' element = { <ProjectList/> } />
                 <Route exact path = '/' element = { <Login/> } />
-                <Route exact path = '/home-admin' element = { <HomeAdmin/> } />
-                <Route exact path = '/home-pm' element = { <HomePM/> } />
-                <Route exact path = '/home-user' element = { <HomeUser/> } />
+                <Route exact path = '/home-admin/:id' element = { <HomeAdmin/> } />
+                <Route exact path = '/home-pm/:id' element = { <HomePM/> } />
+                <Route exact path = '/home-user/:id' element = { <HomeUser/> } />
                 <Route exact path = '/create-user' element = { <CreateUser/> } />
-                <Route exact path = '/create-project' element = { <CreateProject/> } />
+                <Route exact path = '/create-project-admin' element = { <CreateProjectAdmin/> } />
+                <Route exact path = '/create-project-pm' element = { <CreateProjectPM/> } />
                 <Route exact path = '/project-details' element = { <ProjectDetails/> } />
             </ Routes> 
         </ BrowserRouter>
