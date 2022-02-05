@@ -45,15 +45,15 @@ function login (e) {
     }
     axios.post('http://localhost:4000/api/users/login', request)
     .then( resp => {
-        const userID = resp.data.id_user;
+        const userName = resp.data.name; 
         if (resp.data.user === 'gestor') {
-            window.location = `/home-pm/` + userID;
+            window.location = "/home-pm/" + userName;
         } else {
             if (resp.data.user === 'admin') {
-                window.location = `/home-admin/` + userID;
+                window.location = `/home-admin/` + userName;
             } else {
                 if (resp.data.user === 'user') {
-                    window.location = `/home-user/` + userID;
+                    window.location = `/home-user/` + userName;
                 }else {
                     alert(resp.data.message);
                 }

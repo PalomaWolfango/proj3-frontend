@@ -19,9 +19,9 @@ function AppRoute() {
             <Routes>
                 <Route exact path = '/projects-list' element = { <ProjectList/> } />
                 <Route exact path = '/' element = { <Login/> } />
-                <Route exact path = '/home-admin/:id' element = { <HomeAdmin/> } />
-                <Route exact path = '/home-pm/:id' element = { <HomePM/> } />
-                <Route exact path = '/home-user/:id' element = { <HomeUser/> } />
+                <Route exact path = '/home-admin/:name' element = { <HomeAdmin/> } />
+                <Route exact path = '/home-pm/:name' element = { <HomePM/> } />
+                <Route exact path = '/home-user/:name' element = { <HomeUser/> } />
                 <Route exact path = '/create-user' element = { <CreateUser/> } />
                 <Route exact path = '/create-project-admin' element = { <CreateProjectAdmin/> } />
                 <Route exact path = '/create-project-pm' element = { <CreateProjectPM/> } />
