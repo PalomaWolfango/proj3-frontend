@@ -25,7 +25,7 @@ function AppRoute() {
                 <Route exact path = '/create-user' element = { <CreateUser/> } />
                 <Route exact path = '/create-project-admin' element = { <CreateProjectAdmin/> } />
                 <Route exact path = '/create-project-pm' element = { <CreateProjectPM/> } />
-                <Route exact path = '/project-details' element = { <ProjectDetails/> } />
+                <Route exact path = '/project-details/' element = { <ProjectDetails/> } />
             </ Routes> 
         </ BrowserRouter>
     )
