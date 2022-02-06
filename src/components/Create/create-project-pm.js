@@ -82,6 +82,7 @@ function createProject (e) {
     axios.post('http://localhost:4000/api/projetos', request)
     .then( resp => {
         alert("Project successfully added!");
+        window.location.reload(false);
         
     })
     .catch( err => {
