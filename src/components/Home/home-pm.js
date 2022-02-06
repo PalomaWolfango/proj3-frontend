@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 
 function HomePM() {
     
-    let { name } = useParams();
+    let { id, name } = useParams();
 
     return(
         <><MenuPM />

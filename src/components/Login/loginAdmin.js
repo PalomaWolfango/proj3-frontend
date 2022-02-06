@@ -1,11 +1,13 @@
 import React from "react";
 import imageLogin from "../images/login.png";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 class LoginAdmin extends React.Component {
+    
 
     render(){
-
+    
         return(
             <>
             <div className="container" style={{ border: '3px solid #00867d', padding: '50px 35px', maxWidth: '500px', marginTop: '10%'}}>
@@ -39,21 +41,25 @@ class LoginAdmin extends React.Component {
 
 function login (e) {
     e.preventDefault();
+    
+    
     let request =  {
         username: document.getElementById('validationDefaultUsername').value,
         password: document.getElementById('exampleInputPassword1').value   
     }
     axios.post('http://localhost:4000/api/users/login', request)
     .then( resp => {
-        const userName = resp.data.name; 
+        const userId = resp.data.id_user;
+        const userName = resp.data.name;
+        
         if (resp.data.user === 'gestor') {
-            window.location = "/home-pm/" + userName;
+            window.location = "/home-pm/" + userId + "/" + userName;
         } else {
             if (resp.data.user === 'admin') {
-                window.location = `/home-admin/` + userName;
+                window.location = "/home-admin/" + userId + "/" + userName;
             } else {
                 if (resp.data.user === 'user') {
-                    window.location = `/home-user/` + userName;
+                    window.location = "/home-user/" + userId + "/" + userName;
                 }else {
                     alert(resp.data.message);
                 }
