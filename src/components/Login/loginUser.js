@@ -1,4 +1,5 @@
 import React from "react";
+import MenuLogin from "../menu/menu-user";
 
 class LoginUser extends React.Component {
     render(){
