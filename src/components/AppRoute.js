@@ -17,15 +17,15 @@ function AppRoute() {
     return (
         < BrowserRouter >
             <Routes>
-                <Route exact path = '/projects-list' element = { <ProjectList/> } />
+                <Route exact path = '/projects-list/:id/:name' element = { <ProjectList/> } />
                 <Route exact path = '/' element = { <Login/> } />
-                <Route exact path = '/home-admin/:name' element = { <HomeAdmin/> } />
-                <Route exact path = '/home-pm/:name' element = { <HomePM/> } />
-                <Route exact path = '/home-user/:name' element = { <HomeUser/> } />
-                <Route exact path = '/create-user' element = { <CreateUser/> } />
-                <Route exact path = '/create-project-admin' element = { <CreateProjectAdmin/> } />
-                <Route exact path = '/create-project-pm' element = { <CreateProjectPM/> } />
-                <Route exact path = '/project-details/' element = { <ProjectDetails/> } />
+                <Route exact path = '/home-admin/:id/:name' element = { <HomeAdmin/> } />
+                <Route exact path = '/home-pm/:id/:name' element = { <HomePM/> } />
+                <Route exact path = '/home-user/:id/:name' element = { <HomeUser/> } />
+                <Route exact path = '/create-user/:id/:name' element = { <CreateUser/> } />
+                <Route exact path = '/create-project-admin/:id/:name' element = { <CreateProjectAdmin/> } />
+                <Route exact path = '/create-project-pm/:id/:name' element = { <CreateProjectPM/> } />
+                <Route exact path = '/project-details' element = { <ProjectDetails/> } />
             </ Routes> 
         </ BrowserRouter>
     )

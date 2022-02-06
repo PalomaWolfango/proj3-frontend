@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 function HomeUser() {
 
-    let { name } = useParams();
+    let { id, name } = useParams();
 
     return(
         <><MenuUser />
