@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 function HomeAdmin() {
 
-    let { id, name } = useParams();
+    let { name } = useParams();
 
     return(
         <><MenuAdmin />

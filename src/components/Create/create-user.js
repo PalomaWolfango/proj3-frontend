@@ -3,7 +3,9 @@ import MenuAdmin from "../Menu/menu-admin";
 import axios from "axios";
 
 class CreateUser extends React.Component {
+
     render(){
+        
         return(
             <>
             <MenuAdmin />

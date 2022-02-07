@@ -17,8 +17,8 @@ function AppRoute() {
     return (
         < BrowserRouter >
             <Routes>
-                <Route exact path = '/projects-list/:id/:name' element = { <ProjectList/> } />
                 <Route exact path = '/' element = { <Login/> } />
+                <Route exact path = '/projects-list/id=:id/:name' element = { <ProjectList/> } />
                 <Route exact path = '/home-admin/:id/:name' element = { <HomeAdmin/> } />
                 <Route exact path = '/home-pm/:id/:name' element = { <HomePM/> } />
                 <Route exact path = '/home-user/:id/:name' element = { <HomeUser/> } />
@@ -32,4 +32,5 @@ function AppRoute() {
         
     
 }
+
 export default AppRoute;
