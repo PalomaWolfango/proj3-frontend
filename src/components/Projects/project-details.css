@@ -5,11 +5,20 @@
     margin-bottom: 40px;
 }
 
+.div-project-title {
+    margin-bottom: 75px;
+}
+
+.div-project-title label {
+    font-size: 23px;
+}
+
 .div-team {
     float: left;
     border: 3px solid #00867d;
-    width: 15%;
+    width: 18%;
     margin-left: 50px;
+    padding: 15px;
 }
 
 .div-team h3 {
@@ -19,7 +28,7 @@
 
 .team-text {
     padding-left: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     padding-top: 10px;
 }
 
