@@ -31,7 +31,7 @@ class CreateProjectPM extends React.Component {
                         </select>
                     </div>
                     <div className="mb-3">
-                        <textarea type="text" id="validationDefaultDescription" className="form-control" placeholder="Project Decription" rows="5" />
+                        <textarea type="text" id="validationDefaultDescription" className="form-control" placeholder="Project Description" rows="5" />
                     </div>
                    <div style={{float: 'left'}} >
                         <select onChange={(g) => getGestoresEquipa(g)} name="team" id="team">

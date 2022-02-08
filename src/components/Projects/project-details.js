@@ -14,7 +14,7 @@ function ProjectDetails() {
     const [projectsName, setProjectsName] = useState([]);
     const [projectsTeam, setProjectsTeam] = useState([]);
 
-    let { projectId } = useParams();
+    let { id, name, projectId } = useParams();
 
     useEffect(() => {
         axios.get(`http://localhost:4000/api/projetos/` + projectId)
@@ -50,7 +50,11 @@ function ProjectDetails() {
                     <h3><b>TEAM</b></h3>
                     <div className="team-text">
                         {projectsTeam.map(projectTeam => (
-                            <li key={projectTeam._id}>{projectTeam.nome}</li>
+                            projectsName.idGestor === projectTeam._id ? (
+                                <li key={projectTeam._id}> <b>{projectTeam.nome}</b></li>
+                            ) : (
+                                <li key={projectTeam._id}>{projectTeam.nome}</li>
+                            )
                         ))}
                     </div>
                 </div> 
@@ -61,17 +65,17 @@ function ProjectDetails() {
             <div className="div-req" >
                 <h3>
                     <b className="b-req">REQUIREMENTS</b>
-                    <IconButton style={{float: 'right', width: 'auto', padding: '0px', marginRight: '100px'}}>
-                        <AddCircle style={{color: '#00867d', fontSize: '40px'}}/> 
+                    <IconButton style={{float: 'right', width: 'auto', padding: '0px', marginRight: '100px'}} href={'/create-req/' + id + '/' + name + '/' + projectId}>
+                        <AddCircle style={{color: '#00867d', fontSize: '40px'}} /> 
                     </IconButton>
                 </h3>
                 <div className="div-req-cards">
                     <Row xs={1} md={1} className="g-4" className="row" >
-                        {Array.from({ length: 12 }).map((_, idx) => (
+                        {Array.from({ length: 8 }).map((_, idx) => (
                             <Col className="col">
                                 <Card style={{borderColor:"#00867d"}} >
                                     <Card.Body>
-                                        <Link className="link-req" to="#">
+                                        <Link className="link-req" to={{pathname: '/change-req/' + id + '/' + name + '/' + projectId}}>
                                             <Card.Text>
                                                 Requisito Descrição
                                             </Card.Text>

@@ -10,6 +10,8 @@ import CreateUser from './Create/create-user';
 import CreateProjectAdmin from './Create/create-project-admin';
 import ProjectDetails from './Projects/project-details';
 import CreateProjectPM from './Create/create-project-pm';
+import CreateReq from './Requirements/create-req';
+import ChangeReq from './Requirements/delete-update-req';
 
 
 function AppRoute() {
@@ -26,6 +28,8 @@ function AppRoute() {
                 <Route exact path = '/create-project-admin/:id/:name' element = { <CreateProjectAdmin/> } />
                 <Route exact path = '/create-project-pm/:id/:name' element = { <CreateProjectPM/> } />
                 <Route exact path = '/project-details/:id/:name/:projectId' element = { <ProjectDetails/> } />
+                <Route exact path = '/create-req/:id/:name/:projectId' element = { <CreateReq/> } />
+                <Route exact path = '/change-req/:id/:name/:projectId' element = { <ChangeReq/> } />
             </ Routes> 
         </ BrowserRouter>
     )
