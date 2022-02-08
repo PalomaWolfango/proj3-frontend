@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { useParams } from 'react-router-dom';
+import ExitToAppIcon  from '@material-ui/icons/ExitToApp';
 
 function MenuUser() {
     
@@ -16,7 +17,7 @@ function MenuUser() {
                     <Nav className="m-auto">
                         <Nav.Link href={"/home-user/" + id + "/" + name} style={{fontSize: '20px', color: 'white'}}>Home</Nav.Link>
                         <Nav.Link href={"/projects-list/id=" + id + "/" + name} style={{fontSize: '20px', marginLeft: '150px', color: 'white'}}>Projects List</Nav.Link>
-                        <Nav.Link href="/" style={{fontSize: '20px', marginLeft: '709px', color: 'white'}}>Logout <b>{name}</b></Nav.Link>
+                        <Nav.Link href="/" style={{fontSize: '20px', marginLeft: '709px', color: 'white'}}><b>{name}</b> <ExitToAppIcon /></Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>

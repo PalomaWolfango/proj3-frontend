@@ -30,7 +30,7 @@ class LoginAdmin extends React.Component {
                     </div>
                     <div style={{textAlign: 'center', marginTop: '60px'}}>
                     
-                    <button id="button-login" type="submit" class="btn btn-info" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 60px'}}>Submit</button>
+                    <button id="button-login" type="submit" class="btn btn-info" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 60px'}}>Login</button>
                     
                     </div>
                 </form>
