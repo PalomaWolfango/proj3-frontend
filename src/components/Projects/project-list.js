@@ -20,7 +20,8 @@ function ProjectList() {
         })
         .catch(err => {
             console.log(err)
-        })
+        });
+
     });
        
     return(

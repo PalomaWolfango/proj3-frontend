@@ -13,6 +13,7 @@ function ProjectDetails() {
 
     const [projectsName, setProjectsName] = useState([]);
     const [projectsTeam, setProjectsTeam] = useState([]);
+    const [requirements, setRequirements] = useState([]);
 
     let { id, name, projectId } = useParams();
 
@@ -34,6 +35,25 @@ function ProjectDetails() {
         .catch(err => {
             console.log(err)
         });
+    });
+
+    useEffect(()=>{
+        const data = "{\"method\": \"RequisitoContract:readAllRequisitos\",\"args\": []}";
+        const accessToken = '8380b230-89dd-11ec-b83c-83265af4676f-admin';
+
+        fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
+            method: 'post',
+            headers: new Headers ({
+                'Authorization' : 'Bearer ' + accessToken,
+                'Content-Type': 'text/plain'
+            }),
+            body: data
+        })
+        .then(resp => resp.json())
+        .then(response => setRequirements(response.response))
+        .catch(err => {
+            console.log(err)
+        }) 
     });
 
     
@@ -71,19 +91,27 @@ function ProjectDetails() {
                 </h3>
                 <div className="div-req-cards">
                     <Row xs={1} md={1} className="g-4" className="row" >
-                        {Array.from({ length: 8 }).map((_, idx) => (
-                            <Col className="col">
-                                <Card style={{borderColor:"#00867d"}} >
-                                    <Card.Body>
-                                        <Link className="link-req" to={{pathname: '/change-req/' + id + '/' + name + '/' + projectId}}>
-                                            <Card.Text>
-                                                Requisito Descrição
-                                            </Card.Text>
-                                        </Link>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        ))}
+                        <Col className="col">
+                            {requirements &&
+                                requirements.map((element, index)=>
+                                    {
+                                        if(element.projectId === projectId) {
+                                            return (
+                                                <Card style={{borderColor:"#00867d", marginTop: "10px"}} >
+                                                    <Card.Body>
+                                                        <Link className="link-req" to={{pathname: '/change-req/' + id + '/' + name + '/' + projectId}}>
+                                                            <Card.Text key={index} >
+                                                                {element.description}
+                                                            </Card.Text>  
+                                                        </Link>
+                                                    </Card.Body>
+                                                </Card>
+                                            )
+                                        } 
+                                    }
+                                )
+                            }
+                        </Col>
                     </Row>
                 </div>
             </div>
