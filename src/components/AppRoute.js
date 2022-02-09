@@ -13,7 +13,6 @@ import CreateProjectPM from './Create/create-project-pm';
 import CreateReq from './Requirements/create-req';
 import ChangeReq from './Requirements/delete-update-req';
 import CreateTeam from './Create/create-team-admin';
-import TesteReq from './teste';
 
 
 function AppRoute() {
@@ -33,7 +32,6 @@ function AppRoute() {
                 <Route exact path = '/create-req/:id/:name/:projectId' element = { <CreateReq/> } />
                 <Route exact path = '/change-req/:id/:name/:projectId' element = { <ChangeReq/> } />
                 <Route exact path = '/create-team/:id/:name' element = { <CreateTeam/> } />
-                <Route exact path = '/teste' element = { <TesteReq/> } />
             </ Routes> 
         </ BrowserRouter>
     )
