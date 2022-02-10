@@ -14,7 +14,7 @@ function CreateReq() {
         let description = document.getElementById('validationDefaultDescription').value;
         
         const data = "{\"method\": \"RequisitoContract:createRequisito\",\"args\": [\"" + uuid() + "\",\"" + description + "\",\"" +  projectId + "\"]}";
-        const accessToken = '747bcfb0-89e5-11ec-87a0-4732ed28ff83-admin';
+        const accessToken = 'b81b15f0-8a12-11ec-82b6-d7ea1d05a7b1-admin';
     
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',
@@ -41,7 +41,7 @@ function CreateReq() {
         <div className="container" style={{ border: '3px solid #00867d', padding: '15px 35px', marginTop: '90px', maxWidth: '500px' }}>
             <form onSubmit={(e) => createRequirement(e)} >
                 <div className="mb-3" style={{marginTop: '30px'}}>
-                    <textarea type="text" id="validationDefaultDescription" className="form-control" placeholder="Requirement Description" rows="5" />
+                    <textarea type="text" id="validationDefaultDescription" className="form-control" placeholder="Requirement Description" rows="5"/>
                 </div>
                 <div style={{textAlign: 'center', marginTop: '80px'}}>
                     <button type="submit" class="btn btn-info" href="#" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 60px'}}>Create</button>

@@ -30,7 +30,7 @@ function AppRoute() {
                 <Route exact path = '/create-project-pm/:id/:name' element = { <CreateProjectPM/> } />
                 <Route exact path = '/project-details/:id/:name/:projectId' element = { <ProjectDetails/> } />
                 <Route exact path = '/create-req/:id/:name/:projectId' element = { <CreateReq/> } />
-                <Route exact path = '/change-req/:id/:name/:projectId' element = { <ChangeReq/> } />
+                <Route exact path = '/change-req/:id/:name/:projectId/:reqId' element = { <ChangeReq/> } />
                 <Route exact path = '/create-team/:id/:name' element = { <CreateTeam/> } />
             </ Routes> 
         </ BrowserRouter>
