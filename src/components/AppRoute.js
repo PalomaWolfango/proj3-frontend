@@ -12,7 +12,9 @@ import ProjectDetails from './Projects/project-details';
 import CreateProjectPM from './Create/create-project-pm';
 import CreateReq from './Requirements/create-req';
 import ChangeReq from './Requirements/delete-update-req';
-import CreateTeam from './Create/create-team-admin';
+import CreateTeam from './Team/create-team';
+import TeamList from './Team/team-list';
+import TeamMembers from './Team/team-members';
 
 
 function AppRoute() {
@@ -32,6 +34,8 @@ function AppRoute() {
                 <Route exact path = '/create-req/:id/:name/:projectId' element = { <CreateReq/> } />
                 <Route exact path = '/change-req/:id/:name/:projectId/:reqId' element = { <ChangeReq/> } />
                 <Route exact path = '/create-team/:id/:name' element = { <CreateTeam/> } />
+                <Route exact path = '/team-list/:id/:name' element = { <TeamList/> } />
+                <Route exact path = '/team-members/:id/:name/:idEquipa' element = { <TeamMembers/> } />
             </ Routes> 
         </ BrowserRouter>
     )

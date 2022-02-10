@@ -1,0 +1,73 @@
+.project-title {
+    color: grey;
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-bottom: 40px;
+}
+
+.div-project-title {
+    margin-bottom: 75px;
+}
+
+.div-project-title label {
+    font-size: 23px;
+}
+
+.div-team {
+    border: 3px solid #00867d;
+    padding: 15px;
+    margin-top: 15px;
+    float:'right';
+}
+
+.div-team h3 {
+    color: #00867d;
+    text-align: center;
+}
+
+.team-text {
+    padding-left: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.div-req {
+    float: right;
+    width: 70%;
+    margin-right: 50px;
+}
+
+.div-req h3 {
+    color: #00867d;
+    text-align: center;
+}
+
+.b-req {
+    margin-left: 150px;
+}
+
+.div-req-cards {
+    overflow-y: auto;
+    scrollbar-color: #00867d #b2dfdb;
+    height: 600px;
+}
+
+.row {
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 15px;
+}
+
+.col {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.link-req {
+    color: black;
+    text-decoration: none;
+}
+
+.link-req:hover {
+    color: #455a64;
+}

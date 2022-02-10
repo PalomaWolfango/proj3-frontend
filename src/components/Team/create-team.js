@@ -1,5 +1,5 @@
 import React from "react";
-import MenuAdmin from "../Menu/menu-admin";
+import MenuPM from "../Menu/menu-pm";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ function CreateTeam() {
 
     return(
         <>
-        <MenuAdmin />
+        <MenuPM />
         <h1 style={{color: 'grey', margin: '15px', marginTop: '100px', textAlign: 'center'}}>Create Team</h1>
         <div className="container" style={{ border: '3px solid #00867d', padding: '50px 35px', marginTop: '90px', maxWidth: '500px' }}>
             <form onSubmit={(e) => createTeam(e)}>
