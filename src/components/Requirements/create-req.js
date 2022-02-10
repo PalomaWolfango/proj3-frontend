@@ -1,20 +1,23 @@
 import React from "react";
 /* import axios from "axios"; */
 import MenuUser from "../Menu/menu-user";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { v4 as uuid } from "uuid";
 
 function CreateReq() {
 
     let { projectId } = useParams();
+    const navigate = useNavigate();
     
     function createRequirement (e) {
         e.preventDefault();
 
         let description = document.getElementById('validationDefaultDescription').value;
+
+        
         
         const data = "{\"method\": \"RequisitoContract:createRequisito\",\"args\": [\"" + uuid() + "\",\"" + description + "\",\"" +  projectId + "\"]}";
-        const accessToken = '109d2e40-8a61-11ec-935b-9ba339a56c3f-admin';
+        const accessToken = 'e7411400-8a63-11ec-935b-9ba339a56c3f-admin';
     
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',
@@ -27,7 +30,7 @@ function CreateReq() {
         .then(resp => resp.json())
         .then(response => {
             alert("Requirement successfully added!");
-            window.location.reload(false);
+            navigate(-1);
         })
         .catch(err => {
             console.log(err)

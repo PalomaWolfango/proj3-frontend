@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 /* import axios from "axios"; */
 import MenuUser from "../Menu/menu-user";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate  } from 'react-router-dom';
 
 function ChangeReq()  {
 
@@ -9,10 +9,12 @@ function ChangeReq()  {
 
     const [reqDescription, setReqDescription] = useState([]);
 
+    const navigate = useNavigate();
+
 
     useEffect(()=>{
         const data = "{\"method\": \"RequisitoContract:readRequisito\",\"args\": [\"" + reqId + "\"]}";
-        const accessToken = '109d2e40-8a61-11ec-935b-9ba339a56c3f-admin';
+        const accessToken = 'e7411400-8a63-11ec-935b-9ba339a56c3f-admin';
 
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',
@@ -33,7 +35,7 @@ function ChangeReq()  {
         e.preventDefault();
         
         const data = "{\"method\": \"RequisitoContract:deleteRequisito\",\"args\": [\"" + reqId + "\"]}";
-        const accessToken = '109d2e40-8a61-11ec-935b-9ba339a56c3f-admin';
+        const accessToken = 'e7411400-8a63-11ec-935b-9ba339a56c3f-admin';
     
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',
@@ -46,7 +48,7 @@ function ChangeReq()  {
         .then(resp => resp.json())
         .then(response => {
             alert("Requirement successfully deleted!");
-            window.location.reload(false);
+            navigate(-1);
         })
         .catch(err => {
             console.log(err)
@@ -59,7 +61,7 @@ function ChangeReq()  {
         let newDescription = document.getElementById('validationDefaultDescription').value;
         
         const data = "{\"method\": \"RequisitoContract:updateRequisito\",\"args\": [\"" + reqId + "\",\"" + newDescription + "\",\"" +  projectId + "\"]}";
-        const accessToken = '109d2e40-8a61-11ec-935b-9ba339a56c3f-admin';
+        const accessToken = 'e7411400-8a63-11ec-935b-9ba339a56c3f-admin';
     
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',
@@ -72,7 +74,7 @@ function ChangeReq()  {
         .then(resp => resp.json())
         .then(response => {
             alert("Requirement successfully updated!");
-            window.location.reload(false);
+            navigate(-1);
         })
         .catch(err => {
             console.log(err)
