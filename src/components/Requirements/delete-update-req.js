@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 /* import axios from "axios"; */
 import MenuUser from "../Menu/menu-user";
 import { useParams } from 'react-router-dom';
@@ -7,13 +7,33 @@ function ChangeReq()  {
 
     let { reqId, projectId } = useParams();
 
-    /* let descriptionState = this.props.location.state.descriptionState; */
+    const [reqDescription, setReqDescription] = useState([]);
+
+
+    useEffect(()=>{
+        const data = "{\"method\": \"RequisitoContract:readRequisito\",\"args\": [\"" + reqId + "\"]}";
+        const accessToken = '109d2e40-8a61-11ec-935b-9ba339a56c3f-admin';
+
+        fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
+            method: 'post',
+            headers: new Headers ({
+                'Authorization' : 'Bearer ' + accessToken,
+                'Content-Type': 'text/plain'
+            }),
+            body: data
+        })
+        .then(resp => resp.json())
+        .then(response => setReqDescription(response.response))
+        .catch(err => {
+            console.log(err)
+        }) 
+    });
 
     function deleteRequirement (e) {
         e.preventDefault();
         
         const data = "{\"method\": \"RequisitoContract:deleteRequisito\",\"args\": [\"" + reqId + "\"]}";
-        const accessToken = 'b81b15f0-8a12-11ec-82b6-d7ea1d05a7b1-admin';
+        const accessToken = '109d2e40-8a61-11ec-935b-9ba339a56c3f-admin';
     
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',
@@ -39,7 +59,7 @@ function ChangeReq()  {
         let newDescription = document.getElementById('validationDefaultDescription').value;
         
         const data = "{\"method\": \"RequisitoContract:updateRequisito\",\"args\": [\"" + reqId + "\",\"" + newDescription + "\",\"" +  projectId + "\"]}";
-        const accessToken = 'b81b15f0-8a12-11ec-82b6-d7ea1d05a7b1-admin';
+        const accessToken = '109d2e40-8a61-11ec-935b-9ba339a56c3f-admin';
     
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',
@@ -66,7 +86,7 @@ function ChangeReq()  {
         <div className="container" style={{ border: '3px solid #00867d', padding: '50px 35px', marginTop: '90px', maxWidth: '500px' }}>
             <form >
                 <div className="mb-3">
-                    <textarea type="text" id="validationDefaultDescription" className="form-control" rows="5"/>
+                    <textarea type="text" id="validationDefaultDescription" className="form-control" value={reqDescription.description} rows="5"></textarea>
                 </div>
                 <div style={{textAlign: 'center', marginTop: '80px'}}>
                     <button type="submit" class="btn btn-info" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 60px', float: 'left'}} onClick={updateRequirement}>Update</button>

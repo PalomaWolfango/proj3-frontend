@@ -39,7 +39,7 @@ function ProjectDetails() {
 
     useEffect(()=>{
         const data = "{\"method\": \"RequisitoContract:readAllRequisitos\",\"args\": []}";
-        const accessToken = 'b81b15f0-8a12-11ec-82b6-d7ea1d05a7b1-admin';
+        const accessToken = '109d2e40-8a61-11ec-935b-9ba339a56c3f-admin';
 
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',
@@ -99,10 +99,7 @@ function ProjectDetails() {
                                             return (
                                                 <Card style={{borderColor:"#00867d", marginTop: "10px"}} >
                                                     <Card.Body>
-                                                        <Link className="link-req" to={{pathname: '/change-req/' + id + '/' + name + '/' + projectId + '/' + element.idRequisito ,
-                                                                                            state: {
-                                                                                                descriptionState: element.description         
-                                                                                            }}}>
+                                                        <Link className="link-req" to={{pathname: '/change-req/' + id + '/' + name + '/' + projectId + '/' + element.idRequisito}}>
                                                             <Card.Text key={index} >
                                                                 {element.description}
                                                             </Card.Text>  
