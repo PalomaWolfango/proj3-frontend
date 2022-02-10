@@ -14,7 +14,7 @@ function ChangeReq()  {
 
     useEffect(()=>{
         const data = "{\"method\": \"RequisitoContract:readRequisito\",\"args\": [\"" + reqId + "\"]}";
-        const accessToken = 'e7411400-8a63-11ec-935b-9ba339a56c3f-admin';
+        const accessToken = '8200ea60-8a69-11ec-935b-9ba339a56c3f-admin';
 
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',
@@ -35,7 +35,7 @@ function ChangeReq()  {
         e.preventDefault();
         
         const data = "{\"method\": \"RequisitoContract:deleteRequisito\",\"args\": [\"" + reqId + "\"]}";
-        const accessToken = 'e7411400-8a63-11ec-935b-9ba339a56c3f-admin';
+        const accessToken = '8200ea60-8a69-11ec-935b-9ba339a56c3f-admin';
     
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',
@@ -61,7 +61,7 @@ function ChangeReq()  {
         let newDescription = document.getElementById('validationDefaultDescription').value;
         
         const data = "{\"method\": \"RequisitoContract:updateRequisito\",\"args\": [\"" + reqId + "\",\"" + newDescription + "\",\"" +  projectId + "\"]}";
-        const accessToken = 'e7411400-8a63-11ec-935b-9ba339a56c3f-admin';
+        const accessToken = '8200ea60-8a69-11ec-935b-9ba339a56c3f-admin';
     
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',
@@ -99,9 +99,7 @@ function ChangeReq()  {
             </form> 
         </div></>
     )
-    
 }
-
 
 
 export default ChangeReq;
