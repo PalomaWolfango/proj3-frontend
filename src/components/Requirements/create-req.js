@@ -15,7 +15,7 @@ function CreateReq() {
         let description = document.getElementById('validationDefaultDescription').value;
         
         const data = "{\"method\": \"RequisitoContract:createRequisito\",\"args\": [\"" + uuid() + "\",\"" + description + "\",\"" +  projectId + "\"]}";
-        const accessToken = '8200ea60-8a69-11ec-935b-9ba339a56c3f-admin';
+        const accessToken = '631750d0-8b36-11ec-95bf-653d80bf87f9-admin';
     
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',

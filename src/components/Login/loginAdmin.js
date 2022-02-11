@@ -10,7 +10,7 @@ class LoginAdmin extends React.Component {
     
         return(
             <>
-            <div className="container" style={{ border: '3px solid #00867d', padding: '50px 35px', maxWidth: '500px', marginTop: '10%'}}>
+            <div className="container" style={{ border: '3px solid #00867d', padding: '50px 35px', maxWidth: '500px', marginTop: '7%'}}>
                 <div>
                     <img src={imageLogin} alt="ImageLogin" className="center" style={{marginBottom: '40px', width: '25%'}}/>
                 </div>

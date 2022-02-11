@@ -14,7 +14,7 @@ function ChangeReq()  {
 
     useEffect(()=>{
         const data = "{\"method\": \"RequisitoContract:readRequisito\",\"args\": [\"" + reqId + "\"]}";
-        const accessToken = '8200ea60-8a69-11ec-935b-9ba339a56c3f-admin';
+        const accessToken = '631750d0-8b36-11ec-95bf-653d80bf87f9-admin';
 
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',
@@ -25,7 +25,7 @@ function ChangeReq()  {
             body: data
         })
         .then(resp => resp.json())
-        .then(response => setReqDescription(response.response))
+        .then(response => setReqDescription(response.response.description))
         .catch(err => {
             console.log(err)
         }) 
@@ -35,7 +35,7 @@ function ChangeReq()  {
         e.preventDefault();
         
         const data = "{\"method\": \"RequisitoContract:deleteRequisito\",\"args\": [\"" + reqId + "\"]}";
-        const accessToken = '8200ea60-8a69-11ec-935b-9ba339a56c3f-admin';
+        const accessToken = '631750d0-8b36-11ec-95bf-653d80bf87f9-admin';
     
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',
@@ -61,7 +61,7 @@ function ChangeReq()  {
         let newDescription = document.getElementById('validationDefaultDescription').value;
         
         const data = "{\"method\": \"RequisitoContract:updateRequisito\",\"args\": [\"" + reqId + "\",\"" + newDescription + "\",\"" +  projectId + "\"]}";
-        const accessToken = '8200ea60-8a69-11ec-935b-9ba339a56c3f-admin';
+        const accessToken = '631750d0-8b36-11ec-95bf-653d80bf87f9-admin';
     
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',
@@ -88,7 +88,7 @@ function ChangeReq()  {
         <div className="container" style={{ border: '3px solid #00867d', padding: '50px 35px', marginTop: '90px', maxWidth: '500px' }}>
             <form >
                 <div className="mb-3">
-                    <textarea type="text" id="validationDefaultDescription" className="form-control" value={reqDescription.description} rows="5"></textarea>
+                    <textarea type="text" id="validationDefaultDescription" className="form-control" rows="5" defaultValue={reqDescription}></textarea>
                 </div>
                 <div style={{textAlign: 'center', marginTop: '80px'}}>
                     <button type="submit" class="btn btn-info" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 60px', float: 'left'}} onClick={updateRequirement}>Update</button>

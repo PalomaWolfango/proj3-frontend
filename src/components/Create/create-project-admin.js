@@ -44,7 +44,7 @@ function CreateProjectAdmin() {
         <>
         <MenuAdmin />
         <h1 style={{color: 'grey', margin: '15px', marginTop: '100px', textAlign: 'center'}}>Create Project</h1>
-        <div className="container" style={{ border: '3px solid #00867d', padding: '50px 35px', marginTop: '90px', maxWidth: '500px', marginBottom: '90px' }}>
+        <div className="container" style={{ border: '3px solid #00867d', padding: '50px 35px', marginTop: '40px', maxWidth: '500px', marginBottom: '90px' }}>
             <form onSubmit={(e) => createProject(e)}>
                 <div className="mb-3">
                     <input type="text"  id="validationDefaultName"  className="form-control"  placeholder="Project Name"/>
