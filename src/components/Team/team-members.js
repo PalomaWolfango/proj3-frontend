@@ -32,8 +32,6 @@ function TeamMembers() {
         });
     });
 
-  
-
     function addMemberToTeam (e) {
         e.preventDefault();
     
@@ -68,7 +66,7 @@ function TeamMembers() {
                             <option value="tipo0">Members</option>
                         </select>
                         <input type="text" id="validationDefaulDescription" className="form-control"  placeholder="Description" style={{marginTop: '15px'}}/>
-                        <button type="submit" class="btn btn-info" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 58px', marginTop: '30px'}}>Add </button>
+                        <button type="submit" class="btn btn-info" style={{backgroundColor: '#00867d', border: '#00867d', color: 'white', padding: '5px 58px', marginTop: '30px'}}>Add</button>
                     </form>
                 </div>
             </div>    
@@ -96,27 +94,23 @@ function TeamMembers() {
     let { idEquipa } = useParams();
 
     let mensagem = {idEquipa:idEquipa}
-
-  
     
     axios.post('http://localhost:4000/api/users/Users/lista' , mensagem)
         .then( resp => {
             users = resp.data;
 
-
             let pm = document.getElementById('memberName')
 
-                for(const member of users){ 
+            for(const member of users){ 
                 if(pm.childNodes.length -1 < users.length){
-                let opcao = document.createElement('option');
-                opcao.setAttribute('value', member._id);
-                opcao.innerHTML = member.nome;
-                pm.appendChild(opcao)
+                    let opcao = document.createElement('option');
+                    opcao.setAttribute('value', member._id);
+                    opcao.innerHTML = member.nome;
+                    pm.appendChild(opcao)
+                }
+            }  
         }
-    }  
-})
-    
-    
+    )
 }
 
 
