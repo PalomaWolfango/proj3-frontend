@@ -32,6 +32,8 @@ function TeamMembers() {
         });
     });
 
+  
+
     function addMemberToTeam (e) {
         e.preventDefault();
     
@@ -52,7 +54,7 @@ function TeamMembers() {
         })
     }
 
-    getUsers();
+    GetUsers();
        
     return(
         <div style={{marginBottom: '50px'}}>
@@ -87,25 +89,34 @@ function TeamMembers() {
     )
 }
 
-async function getUsers () {
+ function GetUsers () {
 
     let users = [];
+
+    let { idEquipa } = useParams();
+
+    let mensagem = {idEquipa:idEquipa}
+
+  
     
-    await axios.get('http://localhost:4000/api/users/Users/lista')
+    axios.post('http://localhost:4000/api/users/Users/lista' , mensagem)
         .then( resp => {
             users = resp.data;
-        })
-    
-    let pm = document.getElementById('memberName')
 
-    for(const member of users){ 
-        if(pm.childNodes.length -1 < users.length){
-            let opcao = document.createElement('option');
-            opcao.setAttribute('value', member._id);
-            opcao.innerHTML = member.nome;
-            pm.appendChild(opcao)
+
+            let pm = document.getElementById('memberName')
+
+                for(const member of users){ 
+                if(pm.childNodes.length -1 < users.length){
+                let opcao = document.createElement('option');
+                opcao.setAttribute('value', member._id);
+                opcao.innerHTML = member.nome;
+                pm.appendChild(opcao)
         }
     }  
+})
+    
+    
 }
 
 
