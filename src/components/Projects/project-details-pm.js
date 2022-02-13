@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MenuUser from "../Menu/menu-user";
+import MenuPM from "../Menu/menu-pm";
 import './project-details.css'; 
 import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -9,7 +9,7 @@ import axios from "axios";
 import { useParams } from 'react-router-dom';
 
 
-function ProjectDetails() {
+function ProjectDetailsPM() {
 
     const [projectsName, setProjectsName] = useState([]);
     const [projectsTeam, setProjectsTeam] = useState([]);
@@ -58,7 +58,7 @@ function ProjectDetails() {
 
     
     return(
-        <><MenuUser />
+        <><MenuPM />
         {/* -----------------PROJETOS---------------------------- */}
             <div className="div-project-title">
                 <h1 key={projectsName._id} className="project-title">{projectsName.nome}: <label>{projectsName.descricao}</label> </h1> 
@@ -120,4 +120,4 @@ function ProjectDetails() {
     
 }
 
-export default ProjectDetails;
+export default ProjectDetailsPM;

@@ -50,7 +50,7 @@ function ProjectListPM() {
                             <Card.Body>
                                 <Card.Title key={project._id} style={{textTransform: 'uppercase', color: '#00867d'}}>{project.nome}</Card.Title>
                                 <Card.Text key={project._id}> {project.descricao} </Card.Text>
-                                <Card.Link href={'/project-details/' + id + '/' + name + '/' + project._id}>More Details</Card.Link>
+                                <Card.Link href={'/project-details-pm/' + id + '/' + name + '/' + project._id}>More Details</Card.Link>
                             </Card.Body>
                         </Card> 
                     ))}

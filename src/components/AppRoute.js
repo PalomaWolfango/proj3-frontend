@@ -16,6 +16,7 @@ import CreateTeam from './Team/create-team';
 import TeamList from './Team/team-list';
 import TeamMembers from './Team/team-members';
 import ProjectListPM from './Projects/project-list-pm';
+import ProjectDetailsPM from './Projects/project-details-pm';
 
 
 function AppRoute() {
@@ -38,6 +39,7 @@ function AppRoute() {
                 <Route exact path = '/team-list/:id/:name' element = { <TeamList/> } />
                 <Route exact path = '/team-members/:id/:name/:idEquipa' element = { <TeamMembers/> } />
                 <Route exact path = '/projects-list-pm/id=:id/:name' element = { <ProjectListPM/> } />
+                <Route exact path = '/project-details-pm/:id/:name/:projectId' element = { <ProjectDetailsPM/> } />
             </ Routes> 
         </ BrowserRouter>
     )
