@@ -39,7 +39,7 @@ function ProjectDetails() {
 
     useEffect(()=>{
         const data = "{\"method\": \"RequisitoContract:readAllRequisitos\",\"args\": []}";
-        const accessToken = '631750d0-8b36-11ec-95bf-653d80bf87f9-admin';
+        const accessToken = '13932250-8bf9-11ec-909a-6b8bc5fb8c1a-admin';
 
         fetch('http://localhost:8801/invoke/my-channel1/fabric-contract', {
             method: 'post',

@@ -15,6 +15,7 @@ import ChangeReq from './Requirements/delete-update-req';
 import CreateTeam from './Team/create-team';
 import TeamList from './Team/team-list';
 import TeamMembers from './Team/team-members';
+import ProjectListPM from './Projects/project-list-pm';
 
 
 function AppRoute() {
@@ -36,6 +37,7 @@ function AppRoute() {
                 <Route exact path = '/create-team/:id/:name' element = { <CreateTeam/> } />
                 <Route exact path = '/team-list/:id/:name' element = { <TeamList/> } />
                 <Route exact path = '/team-members/:id/:name/:idEquipa' element = { <TeamMembers/> } />
+                <Route exact path = '/projects-list-pm/id=:id/:name' element = { <ProjectListPM/> } />
             </ Routes> 
         </ BrowserRouter>
     )
